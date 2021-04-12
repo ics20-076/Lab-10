@@ -7,15 +7,18 @@
 
 import SwiftUI
 
-struct Map: Hashable, Codable {
+struct MapItem: Hashable, Codable, Identifiable {
     //MARK: - Properties
+    var id: UUID
     var latitude : Double
     var longitude : Double
+    var label : String
     
     //MARK: - Initializers
-    init(latitude: Double, longitude: Double){
+    init(latitude: Double, longitude: Double, label: String){
         self.latitude = latitude
         self.longitude = longitude
+        self.label = label
+        id = UUID()
     }
-    
 }
